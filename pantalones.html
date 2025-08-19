@@ -3,152 +3,185 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Noxhood</title>
+  <title>Noxhood - Pantalones</title>
   <link rel="icon" href="Imagenes/Moon.png">
   <link rel="stylesheet" href="estilo_noxhood.css">
 </head>
 <body>
 
-<header>
-  <div class="logo-container">
-    <a href="index.html"><img src="Imagenes/logo_oscuro.png" alt="Logo Noxhood" class="logo" id="logo-header"></a>
-  </div>
-
-  <nav class="nav-buttons">
-    <button onclick="location.href='index.html'">Inicio</button>
-    <button onclick="location.href='pantalones.html'">Pantalones</button>
-    <button onclick="location.href='camisas.html'">Camisas</button>
-    <button onclick="location.href='redes.html'">Redes</button>
-  </nav>
-
-  <div class="header-right">
-    <div class="search-box">
-      <button class="search-toggle" aria-label="Buscar">🔍</button>
-      <input type="text" id="Buscar" placeholder="Search">
+  <header>
+    <div class="logo-container">
+      <a href="index.html"><img src="Imagenes/logo_oscuro.png" alt="Logo Noxhood" class="logo" id="logo-header"></a>
     </div>
-  </div>
 
-    <!-- Dropdown (⚙) -->
-      <div class="dropdown">
-        <button class="dropdown-toggle">⚙</button>
-        <div class="dropdown-menu">
-          <div class="font-size-controls">
-            <button id="increase-font">A+</button>
-            <button id="decrease-font">A-</button>
-          </div>
-          <button id="modo-btn">🌙 Modo oscuro</button>
-        </div>
+    <nav class="nav-buttons">
+      <button onclick="location.href='index.html'">Inicio</button>
+      <button onclick="location.href='pantalones.html'">Pantalones</button>
+      <button onclick="location.href='camisas.html'">Camisas</button>
+      <button onclick="location.href='redes.html'">Redes</button>
+    </nav>
+
+    <div class="header-right">
+      <div class="search-box">
+        <button class="search-toggle" aria-label="Buscar">🔍</button>
+        <input type="text" id="Buscar" placeholder="Search">
       </div>
-    <!-- Carrito lateral -->
-    <div class="carrito" id="carrito">
-      <h2>Carrito</h2>
-      <ul id="lista-carrito"></ul>
-      <div class="carrito-total">
-        <span>Total:</span>
-        <span id="carrito-total">$0</span>
-      </div>
-      <button class="btn" id="vaciar-carrito">Vaciar carrito</button>
     </div>
-    <!-- Botón flotante del carrito -->
+
+    <!-- Controles flotantes -->
+    <button id="modo-btn">🌙 Modo oscuro</button>
+    <div class="font-size-controls">
+      <button id="increase-font">A+</button>
+      <button id="decrease-font">A-</button>
+    </div>
+
+    <!-- Botón del carrito -->
     <button class="btn-carrito" onclick="toggleCarrito()">🛒</button>
-</header>
+  </header>
 
+  <!-- Contenido principal -->
+  <main>
+    <div class="titulo-seccion">
+      <p class="subtitulo">Dale un vistazo a nuestros pantalones. Hechos</p>
+      <h2 class="titulo-principal">¡Para ti!</h2>
+    </div>
 
-    <!-- CONTENIDO -->
-      <div class="titulo-seccion">
-        <p class="subtitulo">Dale un vistazo a nuestros pantalones. Hechas</p>
-        <h2 class="titulo-principal">¡Para ti!</h2>
+    <!-- Sección: Jeans Clásicos -->
+    <section class="productos">
+      <!-- Producto 1 -->
+      <div class="producto fade-in" data-precio="109900">
+        <img src="Imagenes/cargo1.jpg" alt="Jean clásico azul">
+        <div class="overlay">
+          <h3>Jean clásico azul</h3>
+          <p>$109.900</p>
+          <div class="botones">
+            <a href="javascript:void(0)" class="btn">Añadir al carrito</a>
+            <a href="javascript:void(0)" class="btn">Pagar ya</a>
+          </div>
+        </div>
       </div>
 
-    <section id="pantalones" class="productos">
-        <div class="producto fade-in" data-precio="109.000">
-            <img src="Imagenes/cargo1.jpg" alt="Pantalón Urbano Negro">
-            <div class="overlay">
-              <h3>Jean clásico azul</h3>
-              <p>$109.900</p>
-              <div class="botones">
-               <a href="javascript:void(0)" class="btn">Añadir al carrito</a>
-               <a href="javascript:void(0)" class="btn">Pagar ya</a>
-              </div>
-            </div>
+      <!-- Producto 2 -->
+      <div class="producto fade-in" data-precio="114900">
+        <img src="Imagenes/cargo2.jpg" alt="Jean baggy gris vintage">
+        <div class="overlay">
+          <h3>Jean baggy gris vintage</h3>
+          <p>$114.900</p>
+          <div class="botones">
+            <a href="javascript:void(0)" class="btn">Añadir al carrito</a>
+            <a href="javascript:void(0)" class="btn">Pagar ya</a>
+          </div>
         </div>
-        <div class="producto fade-in" data-precio="114.900">
-            <img src="Imagenes/cargo2.jpg" alt="Pantalón Graffiti">
-            <div class="overlay">
-              <h3>Jean baggy gris vintage</h3>
-              <p>$114.900</p>
-              <div class="botones">
-               <a href="javascript:void(0)" class="btn">Añadir al carrito</a>
-               <a href="javascript:void(0)" class="btn">Pagar ya</a>
-              </div>
-            </div>
+      </div>
+
+      <!-- Producto 3 -->
+      <div class="producto fade-in" data-precio="99900">
+        <img src="Imagenes/cargo3.jpg" alt="Jean estilo baggy">
+        <div class="overlay">
+          <h3>Jean estilo baggy</h3>
+          <p>$99.900</p>
+          <div class="botones">
+            <a href="javascript:void(0)" class="btn">Añadir al carrito</a>
+            <a href="javascript:void(0)" class="btn">Pagar ya</a>
+          </div>
         </div>
-        <div class="producto fade-in" data-precio="99.000">
-            <img src="Imagenes/cargo3.jpg" alt="Pantalón Clásico Street">
-            <div class="overlay">
-              <h3>Jean estilo baggy</h3>
-              <p>$99.900</p>
-              <div class="botones">
-               <a href="javascript:void(0)" class="btn">Añadir al carrito</a>
-               <a href="javascript:void(0)" class="btn">Pagar ya</a>
-              </div>
-            </div>
-        </div>
+      </div>
     </section>
-    <section id="pantalones" class="productos">
-        <div class="producto fade-in" data-precio="109.900">
-            <img src="Imagenes/cargo4.jpg" alt="Jean baggy prelavado">
-            <div class="overlay">
-              <h3>Jean baggy prelavado gris</h3>
-              <p>109.900</p>
-              <div class="botones">
-               <a href="javascript:void(0)" class="btn">Añadir al carrito</a>
-               <a href="javascript:void(0)" class="btn">Pagar ya</a>
-              </div>
-            </div>
+
+    <!-- Sección: Jeans Premium -->
+    <section class="productos">
+      <!-- Producto 4 -->
+      <div class="producto fade-in" data-precio="109900">
+        <img src="Imagenes/cargo4.jpg" alt="Jean baggy prelavado gris">
+        <div class="overlay">
+          <h3>Jean baggy prelavado gris</h3>
+          <p>$109.900</p>
+          <div class="botones">
+            <a href="javascript:void(0)" class="btn">Añadir al carrito</a>
+            <a href="javascript:void(0)" class="btn">Pagar ya</a>
+          </div>
         </div>
-        <div class="producto fade-in" data-precio="109.900">
-            <img src="Imagenes/cargo5.jpg" alt="Jean baggy prelavado">
-            <div class="overlay">
-              <h3>Jean baggy prelavado </h3>
-              <p>109.900</p>
-              <div class="botones">
-               <a href="javascript:void(0)" class="btn">Añadir al carrito</a>
-               <a href="javascript:void(0)" class="btn">Pagar ya</a>
-              </div>
-            </div>
-        </div> 
-        <div class="producto fade-in" data-precio="109.900">
-            <img src="Imagenes/cargo6.jpg" alt="Jean baggy azul">
-            <div class="overlay">
-              <h3>Jean baggy azul</h3>
-              <p>109.900</p>
-              <div class="botones">
-               <a href="javascript:void(0)" class="btn">Añadir al carrito</a>
-               <a href="javascript:void(0)" class="btn">Pagar ya</a>
-              </div>   
-            </div>
+      </div>
+
+      <!-- Producto 5 -->
+      <div class="producto fade-in" data-precio="109900">
+        <img src="Imagenes/cargo5.jpg" alt="Jean baggy prelavado">
+        <div class="overlay">
+          <h3>Jean baggy prelavado</h3>
+          <p>$109.900</p>
+          <div class="botones">
+            <a href="javascript:void(0)" class="btn">Añadir al carrito</a>
+            <a href="javascript:void(0)" class="btn">Pagar ya</a>
+          </div>
         </div>
+      </div>
+
+      <!-- Producto 6 -->
+      <div class="producto fade-in" data-precio="109900">
+        <img src="Imagenes/cargo6.jpg" alt="Jean baggy azul">
+        <div class="overlay">
+          <h3>Jean baggy azul</h3>
+          <p>$109.900</p>
+          <div class="botones">
+            <a href="javascript:void(0)" class="btn">Añadir al carrito</a>
+            <a href="javascript:void(0)" class="btn">Pagar ya</a>
+          </div>
+        </div>
+      </div>
     </section>
-   <footer class="footer-noxhood">
-  <div class="footer-contenido">
-     </div>
-            <img src="Imagenes/logo_oscuro.png" alt="Logo Noxhood" class="logo" id="logo-footer">
-        </div>
+  </main>
+  <!-- Botón flotante para abrir el chatbot -->
+<button id="open-chatbot" class="open-chatbot-btn">💬</button>
+
+<!-- Chatbot flotante -->
+<div class="chatbot-container">
+  <div class="chatbot-header">
+    <span>🤖 Asistente Noxhood</span>
+    <button id="minimize-chatbot">−</button>
+  </div>
+  <div class="chatbot-messages" id="chatbot-messages">
+    <div class="message bot">¡Hola! 👋 Soy el asistente de Noxhood. ¿En qué puedo ayudarte?</div>
+  </div>
+  <div class="chatbot-input">
+    <input type="text" id="chatbot-input" placeholder="Escribe tu mensaje...">
+    <button id="send-chatbot">➤</button>
+  </div>
+</div>
+
+  <!-- Footer -->
+  <footer class="footer-noxhood">
+    <div class="footer-contenido">
+      <img src="Imagenes/logo_oscuro.png" alt="Logo Noxhood" class="logo" id="logo-footer">
+    </div>
     <div class="footer-info">
       <p>© 2025 Noxhood. Todos los derechos reservados.</p>
       <p>contacto@noxhood.com</p>
     </div>
-    
     <div class="footer-redes">
-      <a href="#">Instagram</a>
-      <a href="#">TikTok</a>
-      <a href="#">WhatsApp</a>
+      <a href="https://instagram.com/noxhood">Instagram</a>
+      <a href="https://tiktok.com/@noxhood">TikTok</a>
+      <a href="https://wa.me/573001234567">WhatsApp</a>
+    </div>
+  </footer>
+
+  <!-- Notificación emergente -->
+  <div id="toast" class="toast">Producto añadido al carrito 🛍️</div>
+
+  <!-- Carrito lateral (oculto por defecto) -->
+  <div class="carrito" id="carrito">
+    <h2>Carrito</h2>
+    <ul id="lista-carrito"></ul>
+    <div class="carrito-total">
+      <span>Total:</span>
+      <span id="carrito-total">$0</span>
+    </div>
+    <button class="btn" id="vaciar-carrito">Vaciar carrito</button>
+    <div class="acciones-carrito">
+      <a href="checkout.html" class="btn-pagar-carrito">Pagar</a>
     </div>
   </div>
-</footer>
-   <!-- Notificación emergente -->
-    <div id="toast" class="toast">Producto añadido al carrito 🛍️</div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
 </body>
-<script src="script.js"></script>
 </html>
