@@ -267,201 +267,202 @@
 </head>
 <body>
 
-<header>
-  <div class="logo-container">
-    <a href="index.html"><img src="Imagenes/logo_oscuro.png" alt="Logo Noxhood" class="logo" id="logo-header"></a>
-  </div>
-
-  <nav class="nav-buttons">
-    <button onclick="location.href='index.html'">Inicio</button>
-    <button onclick="location.href='pantalones.html'">Pantalones</button>
-    <button onclick="location.href='camisas.html'">Camisas</button>
-    <button onclick="location.href='redes.html'">Redes</button>
-  </nav>
-
-  <div class="header-right">
-    <div class="search-box">
-      <button class="search-toggle" aria-label="Buscar">🔍</button>
-      <input type="text" id="Buscar" placeholder="Search">
+  <header>
+    <div class="logo-container">
+      <a href="index.html"><img src="Imagenes/logo_oscuro.png" alt="Logo Noxhood" class="logo" id="logo-header"></a>
     </div>
-  </div>
 
-  <!-- Dropdown (⚙) -->
-  <div class="dropdown">
-    <button class="dropdown-toggle">⚙</button>
-    <div class="dropdown-menu">
-      <div class="font-size-controls">
-        <button id="increase-font">A+</button>
-        <button id="decrease-font">A-</button>
-      </div>
-      <button id="modo-btn">🌙 Modo oscuro</button>
-    </div>
-  </div>
+    <nav class="nav-buttons">
+      <button onclick="location.href='index.html'">Inicio</button>
+      <button onclick="location.href='pantalones.html'">Pantalones</button>
+      <button onclick="location.href='camisas.html'">Camisas</button>
+      <button onclick="location.href='redes.html'">Redes</button>
+    </nav>
 
-  <!-- Botón del carrito -->
-  <button class="btn-carrito" onclick="toggleCarrito()">🛒</button>
-</header>
-
-<main class="producto-detalle">
-  <!-- Imagen con galería -->
-  <div class="producto-imagen">
-    <div class="galeria">
-      <div class="galeria-principal">
-        <img src="Imagenes/camisa2.jpg" alt="Camiseta Noxhood" id="imagen-principal">
-      </div>
-      <div class="miniaturas">
-        <img src="Imagenes/camisa2.jpg" alt="Vista frontal" class="active" onclick="cambiarImagen(this)">
-        <img src="Imagenes/camisa2-1.jpg" alt="Vista trasera" onclick="cambiarImagen(this)">
-        <img src="Imagenes/camisa2-2.jpg" alt="Modelo usando la camisa" onclick="cambiarImagen(this)">
-        <img src="Imagenes/camisa2-3.jpg" alt="Modelo usando la camisa" onclick="cambiarImagen(this)">
+    <div class="header-right">
+      <div class="search-box">
+        <button class="search-toggle" aria-label="Buscar">🔍</button>
+        <input type="text" id="Buscar" placeholder="Search">
       </div>
     </div>
-  </div>
 
-  <!-- Información -->
-  <div class="producto-info">
-    <div class="info-box">
-      <h2>Camiseta Box Fit Classy Sand</h2>
-      <p class="producto-descripcion">
-        Camiseta de algodón premium con estampado urbano inspirado en la estética Noxhood. 
-        Perfecta para quienes buscan estilo y comodidad.
-      </p>
-      <p class="producto-precio">$89.900</p>
+    <!-- Controles flotantes -->
+    <button id="modo-btn">🌙 Modo oscuro</button>
+    <div class="font-size-controls">
+      <button id="increase-font">A+</button>
+      <button id="decrease-font">A-</button>
+    </div>
 
-      <!-- Selector de talla -->
-      <div class="selector">
-        <label>Talla</label>
-        <div class="opciones" id="tallas">
-          <button data-talla="S">S</button>
-          <button data-talla="M" class="active">M</button>
-          <button data-talla="L">L</button>
-          <button data-talla="XL">XL</button>
+    <!-- Botón del carrito -->
+    <button class="btn-carrito" onclick="toggleCarrito()">🛒</button>
+  </header>
+
+  <main class="producto-detalle">
+    <!-- Imagen con galería -->
+    <div class="producto-imagen">
+      <div class="galeria">
+        <div class="galeria-principal">
+          <img src="Imagenes/camisa2.jpg" alt="Camiseta Noxhood" id="imagen-principal">
         </div>
-      </div>
-
-      <!-- Selector de color -->
-      <div class="selector">
-        <label>Color</label>
-        <div class="opciones" id="colores">
-          <button data-color="white" style="background:white; border:1px solid #ccc">Blanco</button>
-          <button data-color="sand" class="active" style="background:#f0dcc5; border:1px solid #ccc">Arena</button>
-          <button data-color="black" style="background:black; color:white">Negro</button>
-        </div>
-      </div>
-
-      <!-- Botones -->
-      <div class="botones">
-        <button class="boton-carrito" onclick="agregarAlCarrito()">Añadir al carrito</button>
-        <button class="boton-pagar" onclick="window.location.href='checkout.html'">Pagar ya</button>
-      </div>
-
-      <!-- WhatsApp -->
-      <a href="https://wa.me/573001234567" target="_blank" class="btn-whatsapp">💬 Consultar por WhatsApp</a>
-
-      <!-- Reseñas -->
-      <div class="resenas">
-        <h3>Lo que dicen nuestros clientes</h3>
-        <div class="resena">
-          <p>"Tela suave y diseño único. Llegó rápido y empacado con estilo."</p>
-          <span class="usuario">- Andrés M.</span>
-        </div>
-        <div class="resena">
-          <p>"La talla M quedó perfecta. La edición especial es increíble."</p>
-          <span class="usuario">- Valentina R.</span>
+        <div class="miniaturas">
+          <img src="Imagenes/camisa2.jpg" alt="Vista frontal" class="active" onclick="cambiarImagen(this)">
+          <img src="Imagenes/camisa2-1.jpg" alt="Vista trasera" onclick="cambiarImagen(this)">
+          <img src="Imagenes/camisa2-2.jpg" alt="Modelo usando la camisa" onclick="cambiarImagen(this)">
+          <img src="Imagenes/camisa2-3.jpg" alt="Modelo usando la camisa" onclick="cambiarImagen(this)">
         </div>
       </div>
     </div>
-  </div>
-</main>
 
-<!-- Carrito lateral -->
-<div class="carrito" id="carrito">
-  <h2>Carrito</h2>
-  <ul id="lista-carrito"></ul>
-  <div class="carrito-total">
-    <span>Total:</span>
-    <span id="carrito-total">$0</span>
+    <!-- Información -->
+    <div class="producto-info">
+      <div class="info-box">
+        <h2>Camiseta Box Fit Classy Sand</h2>
+        <p class="producto-descripcion">
+          Camiseta de algodón premium con estampado urbano inspirado en la estética Noxhood. 
+          Perfecta para quienes buscan estilo y comodidad.
+        </p>
+        <p class="producto-precio">$89.900</p>
+
+        <!-- Selector de talla -->
+        <div class="selector">
+          <label>Talla</label>
+          <div class="opciones" id="tallas">
+            <button data-talla="S">S</button>
+            <button data-talla="M" class="active">M</button>
+            <button data-talla="L">L</button>
+            <button data-talla="XL">XL</button>
+          </div>
+        </div>
+
+        <!-- Selector de color -->
+        <div class="selector">
+          <label>Color</label>
+          <div class="opciones" id="colores">
+            <button data-color="white" style="background:white; border:1px solid #ccc">Blanco</button>
+            <button data-color="sand" class="active" style="background:#f0dcc5; border:1px solid #ccc">Arena</button>
+            <button data-color="black" style="background:black; color:white">Negro</button>
+          </div>
+        </div>
+
+        <!-- Botones -->
+        <div class="botones">
+          <button class="boton-carrito" onclick="agregarAlCarrito()">Añadir al carrito</button>
+          <button class="boton-pagar" onclick="window.location.href='checkout.html'">Pagar ya</button>
+        </div>
+
+        <!-- WhatsApp -->
+        <a href="https://wa.me/573001234567" target="_blank" class="btn-whatsapp">💬 Consultar por WhatsApp</a>
+
+        <!-- Reseñas -->
+        <div class="resenas">
+          <h3>Lo que dicen nuestros clientes</h3>
+          <div class="resena">
+            <p>"Tela suave y diseño único. Llegó rápido y empacado con estilo."</p>
+            <span class="usuario">- Andrés M.</span>
+          </div>
+          <div class="resena">
+            <p>"La talla M quedó perfecta. La edición especial es increíble."</p>
+            <span class="usuario">- Valentina R.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Carrito lateral -->
+  <div class="carrito" id="carrito">
+    <h2>Carrito</h2>
+    <ul id="lista-carrito"></ul>
+    <div class="carrito-total">
+      <span>Total:</span>
+      <span id="carrito-total">$0</span>
+    </div>
+    <button class="btn" id="vaciar-carrito">Vaciar carrito</button>
   </div>
-  <button class="btn" id="vaciar-carrito">Vaciar carrito</button>
+
+  <!-- Notificación -->
+  <div id="toast" class="toast">Producto añadido al carrito 🛍️</div>
+    <!-- Botón flotante para abrir el chatbot -->
+<button id="open-chatbot" class="open-chatbot-btn">💬</button>
+
+<!-- Chatbot flotante -->
+<div class="chatbot-container">
+  <div class="chatbot-header">
+    <span>🤖 Asistente Noxhood</span>
+    <button id="minimize-chatbot">−</button>
+  </div>
+  <div class="chatbot-messages" id="chatbot-messages">
+    <div class="message bot">¡Hola! 👋 Soy el asistente de Noxhood. ¿En qué puedo ayudarte?</div>
+  </div>
+  <div class="chatbot-input">
+    <input type="text" id="chatbot-input" placeholder="Escribe tu mensaje...">
+    <button id="send-chatbot">➤</button>
+  </div>
 </div>
 
-<!-- Notificación -->
-<div id="toast" class="toast">Producto añadido al carrito 🛍️</div>
 
-<footer class="footer-noxhood">
-  <div class="footer-contenido">
-    <img src="Imagenes/logo_oscuro.png" alt="Logo Noxhood" class="logo" id="logo-footer">
-  </div>
-  <div class="footer-info">
-    <p>© 2025 Noxhood. Todos los derechos reservados.</p>
-    <p>contacto@noxhood.com</p>
-  </div>
-  <div class="footer-redes">
-    <a href="https://instagram.com/noxhood">Instagram</a>
-    <a href="https://tiktok.com/@noxhood">TikTok</a>
-    <a href="https://wa.me/573001234567">WhatsApp</a>
-  </div>
-</footer>
+  <footer class="footer-noxhood">
+    <div class="footer-contenido">
+      <img src="Imagenes/logo_oscuro.png" alt="Logo Noxhood" class="logo" id="logo-footer">
+    </div>
+    <div class="footer-info">
+      <p>© 2025 Noxhood. Todos los derechos reservados.</p>
+      <p>contacto@noxhood.com</p>
+    </div>
+    <div class="footer-redes">
+      <a href="https://instagram.com/noxhood">Instagram</a>
+      <a href="https://tiktok.com/@noxhood">TikTok</a>
+      <a href="https://wa.me/573001234567">WhatsApp</a>
+    </div>
+  </footer>
 
-<script src="script.js"></script>
-<script>
-  // --- Variables del carrito ---
-  let carrito = [];
-  let total = 0;
+  <script src="script.js"></script>
+  <script>
+    // --- Añadir al carrito ---
+    function agregarAlCarrito() {
+      const talla = document.querySelector("#tallas .active").dataset.talla;
+      const color = document.querySelector("#colores .active").dataset.color;
+      const nombre = document.querySelector(".producto-info h2").textContent;
+      const precio = 89900;
+      const imagen = document.getElementById("imagen-principal").src;
 
-  // --- Renderizar carrito ---
-  function renderCarrito() {
-    const listaCarritoEl = document.getElementById("lista-carrito");
-    if (!listaCarritoEl) return;
-
-    listaCarritoEl.innerHTML = "";
-    carrito.forEach(item => {
-      const li = document.createElement("li");
-      li.textContent = `${item.nombre} - $${item.precio}`;
-      listaCarritoEl.appendChild(li);
-    });
-
-    const totalCarritoEl = document.getElementById("carrito-total");
-    if (totalCarritoEl) {
-      totalCarritoEl.textContent = `$${total}`;
+      if (typeof agregarAlCarritoGlobal === 'function') {
+        agregarAlCarritoGlobal(nombre, precio, imagen, talla, color);
+      } else {
+        // Fallback: si no existe, usa carrito local
+        window.carrito = window.carrito || [];
+        window.total = window.total || 0;
+        window.carrito.push({ nombre, precio, imagen, talla, color });
+        window.total += precio;
+        if (typeof renderCarrito === 'function') {
+          renderCarrito();
+        }
+        mostrarToast(`✅ ${nombre} (${talla}, ${color}) añadido al carrito`);
+      }
     }
-  }
 
-  // --- Añadir al carrito ---
-  function agregarAlCarrito() {
-    const talla = document.querySelector("#tallas .active").dataset.talla;
-    const color = document.querySelector("#colores .active").dataset.color;
-    const nombre = document.querySelector(".producto-info h2").textContent;
-    const precio = 89900;
+    // --- Cambiar imagen ---
+    function cambiarImagen(img) {
+      document.getElementById("imagen-principal").src = img.src;
+      document.querySelectorAll(".miniaturas img").forEach(i => i.classList.remove("active"));
+      img.classList.add("active");
+    }
 
-    carrito.push({ nombre, precio });
-    total += precio;
-    renderCarrito();
-    mostrarToast(`✅ ${nombre} (${talla}, ${color}) añadido al carrito`);
-  }
-
-  // --- Cambiar imagen ---
-  function cambiarImagen(img) {
-    document.getElementById("imagen-principal").src = img.src;
-    document.querySelectorAll(".miniaturas img").forEach(i => i.classList.remove("active"));
-    img.classList.add("active");
-  }
-
-  // --- Selector de talla ---
-  document.querySelectorAll("#tallas button").forEach(btn => {
-    btn.addEventListener("click", () => {
-      document.querySelectorAll("#tallas button").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
+    // --- Selector de talla ---
+    document.querySelectorAll("#tallas button").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll("#tallas button").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+      });
     });
-  });
 
-  // --- Selector de color ---
-  document.querySelectorAll("#colores button").forEach(btn => {
-    btn.addEventListener("click", () => {
-      document.querySelectorAll("#colores button").forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
+    // --- Selector de color ---
+    document.querySelectorAll("#colores button").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll("#colores button").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+      });
     });
-  });
-</script>
+  </script>
 </body>
 </html>
