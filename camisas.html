@@ -3,53 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Noxhood</title>
+  <title>Noxhood - Camisas</title>
   <link rel="icon" href="Imagenes/Moon.png">
   <link rel="stylesheet" href="estilo_noxhood.css">
 </head>
 <body>
 
-<header>
-  <div class="logo-container">
-    <a href="index.html"><img src="Imagenes/logo_oscuro.png" alt="Logo Noxhood" class="logo" id="logo-header"></a>
-  </div>
-
-  <nav class="nav-buttons">
-    <button onclick="location.href='index.html'">Inicio</button>
-    <button onclick="location.href='pantalones.html'">Pantalones</button>
-    <button onclick="location.href='camisas.html'">Camisas</button>
-    <button onclick="location.href='redes.html'">Redes</button>
-  </nav>
-
-  <div class="header-right">
-    <div class="search-box">
-      <button class="search-toggle" aria-label="Buscar">🔍</button>
-      <input type="text" id="Buscar" placeholder="Search">
+  <header>
+    <div class="logo-container">
+      <a href="index.html"><img src="Imagenes/logo_oscuro.png" alt="Logo Noxhood" class="logo" id="logo-header"></a>
     </div>
-  </div>
 
-      <div class="dropdown-menu">
-        <div class="font-size-controls">
-          <button id="increase-font">A+</button>
-          <button id="decrease-font">A-</button>
-        </div>
-        <button id="modo-btn">🌙 Modo oscuro</button>
+    <nav class="nav-buttons">
+      <button onclick="location.href='index.html'">Inicio</button>
+      <button onclick="location.href='pantalones.html'">Pantalones</button>
+      <button onclick="location.href='camisas.html'">Camisas</button>
+      <button onclick="location.href='redes.html'">Redes</button>
+    </nav>
+
+    <div class="header-right">
+      <div class="search-box">
+        <button class="search-toggle" aria-label="Buscar">🔍</button>
+        <input type="text" id="Buscar" placeholder="Search">
       </div>
+    </div>
 
-  <!-- Botón del carrito -->
-  <button class="btn-carrito" style="top: 140px;" onclick="toggleCarrito()">🛒</button>
-</header>
+    <!-- Controles flotantes -->
+    <button id="modo-btn">🌙 Modo oscuro</button>
+    <div class="font-size-controls">
+      <button id="increase-font">A+</button>
+      <button id="decrease-font">A-</button>
+    </div>
 
-    <!-- CONTENIDO -->
+    <!-- Botón del carrito -->
+    <button class="btn-carrito" style="top: 140px;" onclick="toggleCarrito()">🛒</button>
+  </header>
+
+  <!-- Contenido principal -->
+  <main>
     <div class="titulo-seccion">
       <p class="subtitulo">Dale un vistazo a nuestras camisas. Hechas</p>
       <h2 class="titulo-principal">¡Para ti!</h2>
     </div>
 
+    <!-- Sección: Camisas Clásicas -->
     <section class="productos">
-      <!-- Producto 1 Camisa -->
-      <div class="producto fade-in" data-precio="50.000">
-        <img src="Imagenes/camisa1.jpg" alt="Camisa básica">
+      <!-- Producto 1 -->
+      <div class="producto fade-in" data-precio="50000">
+        <img src="Imagenes/camisa1.jpg" alt="Camiseta Box Fit Classy white">
         <div class="overlay">
           <h3>Camiseta Box Fit Classy white</h3>
           <p>$50.000</p>
@@ -60,10 +61,10 @@
         </div>
       </div>
 
-      <!-- Producto 2 Camisa (CLIQUEABLE) -->
+      <!-- Producto 2 (Cliqueable) -->
       <a href="camisa2.html" class="producto-link">
-        <div class="producto fade-in" data-precio="50.000">
-          <img src="Imagenes/camisa2.jpg" alt="Camisa básica">
+        <div class="producto fade-in" data-precio="50000">
+          <img src="Imagenes/camisa2.jpg" alt="Camiseta Box Fit Classy Sand">
           <div class="overlay">
             <h3>Camiseta Box Fit Classy Sand</h3>
             <p>$50.000</p>
@@ -75,9 +76,9 @@
         </div>
       </a>
 
-      <!-- Producto 3 Camisa -->
-      <div class="producto fade-in" data-precio="50.000">
-        <img src="Imagenes/camisa3.jpg" alt="Camisa básica">
+      <!-- Producto 3 -->
+      <div class="producto fade-in" data-precio="50000">
+        <img src="Imagenes/camisa3.jpg" alt="Camiseta Box Fit Classy Black">
         <div class="overlay">
           <h3>Camiseta Box Fit Classy Black</h3>
           <p>$50.000</p>
@@ -88,60 +89,85 @@
         </div>
       </div>
     </section>
+
+    <!-- Sección: Camisas Premium -->
     <section class="productos">
-        <div class="producto fade-in" data-precio="50.000">
-            <img src="Imagenes/camisa4.jpg" alt="Jean baggy prelavado">
-            <div class="overlay">
-              <h3>Camiseta Box Fit Classy Blue</h3>
-              <p>109.900</p>
-              <div class="botones">
-               <a href="javascript:void(0)" class="btn">Añadir al carrito</a>
-               <a href="javascript:void(0)" class="btn">Pagar ya</a>
-              </div>
-            </div>
+      <!-- Producto 4 -->
+      <div class="producto fade-in" data-precio="109900">
+        <img src="Imagenes/camisa4.jpg" alt="Camiseta Box Fit Classy Blue">
+        <div class="overlay">
+          <h3>Camiseta Box Fit Classy Blue</h3>
+          <p>$109.900</p>
+          <div class="botones">
+            <a href="javascript:void(0)" class="btn">Añadir al carrito</a>
+            <a href="javascript:void(0)" class="btn">Pagar ya</a>
+          </div>
         </div>
-        <div class="producto fade-in" data-precio="50.000">
-            <img src="Imagenes/camisa5.jpg" alt="Jean baggy prelavado">
-            <div class="overlay">
-              <h3>Camiseta Box Fit Classy Red </h3>
-              <p>80.000</p>
-              <div class="botones">
-               <a href="javascript:void(0)" class="btn">Añadir al carrito</a>
-               <a href="javascript:void(0)" class="btn">Pagar ya</a>
-              </div>
-            </div>
-        </div> 
-        <div class="producto fade-in" data-precio="50.000">
-            <img src="Imagenes/camisa6.jpg" alt="Jean baggy azul">
-            <div class="overlay">
-              <h3>Camiseta Colors Cream</h3>
-              <p>109.900</p>
-              <div class="botones">
-             <a href="javascript:void(0)" class="btn">Añadir al carrito</a>
-             <a href="javascript:void(0)" class="btn">Pagar ya</a>
-              </div>   
-            </div> 
+      </div>
+
+      <!-- Producto 5 -->
+      <div class="producto fade-in" data-precio="80000">
+        <img src="Imagenes/camisa5.jpg" alt="Camiseta Box Fit Classy Red">
+        <div class="overlay">
+          <h3>Camiseta Box Fit Classy Red</h3>
+          <p>$80.000</p>
+          <div class="botones">
+            <a href="javascript:void(0)" class="btn">Añadir al carrito</a>
+            <a href="javascript:void(0)" class="btn">Pagar ya</a>
+          </div>
         </div>
+      </div>
+
+      <!-- Producto 6 -->
+      <div class="producto fade-in" data-precio="109900">
+        <img src="Imagenes/camisa6.jpg" alt="Camiseta Colors Cream">
+        <div class="overlay">
+          <h3>Camiseta Colors Cream</h3>
+          <p>$109.900</p>
+          <div class="botones">
+            <a href="javascript:void(0)" class="btn">Añadir al carrito</a>
+            <a href="javascript:void(0)" class="btn">Pagar ya</a>
+          </div>
+        </div>
+      </div>
     </section>
-   <footer class="footer-noxhood">
-  <div class="footer-contenido">
-     </div>
-            <img src="Imagenes/logo_oscuro.png" alt="Logo Noxhood" class="logo" id="logo-footer">
-        </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-noxhood">
+    <div class="footer-contenido">
+      <img src="Imagenes/logo_oscuro.png" alt="Logo Noxhood" class="logo" id="logo-footer">
+    </div>
     <div class="footer-info">
       <p>© 2025 Noxhood. Todos los derechos reservados.</p>
       <p>contacto@noxhood.com</p>
     </div>
-    
     <div class="footer-redes">
-      <a href="#">Instagram</a>
-      <a href="#">TikTok</a>
-      <a href="#">WhatsApp</a>
+      <a href="https://instagram.com/noxhood">Instagram</a>
+      <a href="https://tiktok.com/@noxhood">TikTok</a>
+      <a href="https://wa.me/573001234567">WhatsApp</a>
+    </div>
+  </footer>
+
+  <!-- Notificación emergente -->
+  <div id="toast" class="toast">Producto añadido al carrito 🛍️</div>
+
+  <!-- Carrito lateral (oculto por defecto) -->
+  <div class="carrito" id="carrito">
+    <h2>Carrito</h2>
+    <ul id="lista-carrito"></ul>
+    <div class="carrito-total">
+      <span>Total:</span>
+      <span id="carrito-total">$0</span>
+    </div>
+    <button class="btn" id="vaciar-carrito">Vaciar carrito</button>
+    <div class="acciones-carrito">
+      <a href="checkout.html" class="btn-pagar-carrito">Pagar</a>
     </div>
   </div>
-</footer>
-    <!-- Notificación emergente -->
-    <div id="toast" class="toast">Producto añadido al carrito 🛍️</div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+
 </body>
-<script src="script.js"></script>
 </html>
