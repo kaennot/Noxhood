@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camiseta Box Fit Classy Sand - Noxhood</title>
+  <link rel="icon" href="Imagenes/Moon.png">
+  <link rel="stylesheet" href="estilo_noxhood.css">
+  <style>
+    /* Estilos específicos para camisa2.html */
+    .producto-detalle {
+      display: flex;
+      gap: 50px;
+      padding: 80px 8%;
+      min-height: 80vh;
+      flex-wrap: wrap;
+    }
+
+    .producto-imagen {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .galeria-principal img {
+      width: 100%;
+      border-radius: 10px;
+      background: #969696;
+      padding: 15px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.5);
+    }
+
+    .miniaturas {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      justify-content: flex-start;
+    }
+
+    .miniaturas img {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      object-fit: cover;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: border 0.3s ease;
+    }
+
+    .miniaturas img.active {
+      border: 2px solid #6b6a6a;
+    }
+
+    .producto-info {
+      flex: 1;
+      max-width: 500px;
+    }
+
+    .info-box {
+      background: #fff;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    body.modo-oscuro .info-box {
+      background: #2a2a2a;
+    }
+
+    .producto-info h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #313030;
+    }
+
+    body.modo-oscuro .producto-info h2 {
+      color: #fff;
+    }
+
+    .producto-descripcion {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #616161;
+      margin-bottom: 20px;
+    }
+
+    body.modo-oscuro .producto-descripcion {
+      color: #ccc;
+    }
+
+    .producto-precio {
+      font-size: 1.5rem;
+      color: #2a2a2a;
+      margin: 20px 0;
+    }
+
+    body.modo-oscuro .producto-precio {
+      color: #fff;
+    }
+
+    /* Selector de talla y color */
+    .selector {
+      margin: 20px 0;
+    }
+
+    .selector label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 600;
+      color: #000;
+    }
+
+    body.modo-oscuro .selector label {
+      color: #fff;
+    }
+
+    .opciones {
+      display: flex;
+      gap: 10px;
+    }
+
+    .opciones button {
+      padding: 8px 15px;
+      border: 1px solid #ccc;
+      background: white;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: #000;
+    }
+
+    body.modo-oscuro .opciones button {
+      background: #333;
+      border-color: #555;
+      color: #fff;
+    }
+
+    .opciones button:hover {
+      border-color: #000;
+      transform: scale(1.05);
+    }
+
+    body.modo-oscuro .opciones button:hover {
+      border-color: #fff;
+    }
+
+    .opciones button.active {
+      border-color: #000;
+      background-color: #000;
+      color: white;
+    }
+
+    body.modo-oscuro .opciones button.active {
+      background-color: #fff;
+      color: #000;
+    }
+
+    /* Botones principales */
+    .botones {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .boton-carrito,
+    .boton-pagar {
+      padding: 12px 25px;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: 0.3s;
+      flex: 1;
+    }
+
+    .boton-carrito {
+      background-color: #6b6a6a;
+      color: #fff;
+    }
+
+    .boton-pagar {
+      background-color: #6b6a6a;
+      color: #fff;
+    }
+
+    .boton-carrito:hover,
+    .boton-pagar:hover {
+      transform: scale(1.05);
+      background-color: #444;
+    }
+
+    /* WhatsApp */
+    .btn-whatsapp {
+      display: block;
+      width: 100%;
+      background: #25D366;
+      color: white;
+      text-align: center;
+      padding: 14px;
+      border-radius: 15px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 20px;
+      transition: background 0.3s ease;
+    }
+
+    .btn-whatsapp:hover {
+      background: #128C7E;
+    }
+
+    /* Reseñas */
+    .resenas {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+    }
+
+    body.modo-oscuro .resenas {
+      border-top-color: #444;
+    }
+
+    .resenas h3 {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: #313030;
+    }
+
+    body.modo-oscuro .resenas h3 {
+      color: #fff;
+    }
+
+    .resena {
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #616161;
+    }
+
+    body.modo-oscuro .resena {
+      background: #2a2a2a;
+      color: #ccc;
+    }
+
+    .resena .usuario {
+      font-weight: 600;
+      color: #000;
+    }
+
+    body.modo-oscuro .resena .usuario {
+      color: #fff;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .producto-detalle {
+        flex-direction: column;
+      }
+      .galeria-principal img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo-container">
+    <a href="index.html"><img src="Imagenes/logo_oscuro.png" alt="Logo Noxhood" class="logo" id="logo-header"></a>
+  </div>
+
+  <nav class="nav-buttons">
+    <button onclick="location.href='index.html'">Inicio</button>
+    <button onclick="location.href='pantalones.html'">Pantalones</button>
+    <button onclick="location.href='camisas.html'">Camisas</button>
+    <button onclick="location.href='redes.html'">Redes</button>
+  </nav>
+
+  <div class="header-right">
+    <div class="search-box">
+      <button class="search-toggle" aria-label="Buscar">🔍</button>
+      <input type="text" id="Buscar" placeholder="Search">
+    </div>
+  </div>
+
+  <!-- Dropdown (⚙) -->
+  <div class="dropdown">
+    <button class="dropdown-toggle">⚙</button>
+    <div class="dropdown-menu">
+      <div class="font-size-controls">
+        <button id="increase-font">A+</button>
+        <button id="decrease-font">A-</button>
+      </div>
+      <button id="modo-btn">🌙 Modo oscuro</button>
+    </div>
+  </div>
+
+  <!-- Botón del carrito -->
+  <button class="btn-carrito" onclick="toggleCarrito()">🛒</button>
+</header>
+
+<main class="producto-detalle">
+  <!-- Imagen con galería -->
+  <div class="producto-imagen">
+    <div class="galeria">
+      <div class="galeria-principal">
+        <img src="Imagenes/camisa2.jpg" alt="Camiseta Noxhood" id="imagen-principal">
+      </div>
+      <div class="miniaturas">
+        <img src="Imagenes/camisa2.jpg" alt="Vista frontal" class="active" onclick="cambiarImagen(this)">
+        <img src="Imagenes/camisa2-1.jpg" alt="Vista trasera" onclick="cambiarImagen(this)">
+        <img src="Imagenes/camisa2-2.jpg" alt="Modelo usando la camisa" onclick="cambiarImagen(this)">
+        <img src="Imagenes/camisa2-3.jpg" alt="Modelo usando la camisa" onclick="cambiarImagen(this)">
+      </div>
+    </div>
+  </div>
+
+  <!-- Información -->
+  <div class="producto-info">
+    <div class="info-box">
+      <h2>Camiseta Box Fit Classy Sand</h2>
+      <p class="producto-descripcion">
+        Camiseta de algodón premium con estampado urbano inspirado en la estética Noxhood. 
+        Perfecta para quienes buscan estilo y comodidad.
+      </p>
+      <p class="producto-precio">$89.900</p>
+
+      <!-- Selector de talla -->
+      <div class="selector">
+        <label>Talla</label>
+        <div class="opciones" id="tallas">
+          <button data-talla="S">S</button>
+          <button data-talla="M" class="active">M</button>
+          <button data-talla="L">L</button>
+          <button data-talla="XL">XL</button>
+        </div>
+      </div>
+
+      <!-- Selector de color -->
+      <div class="selector">
+        <label>Color</label>
+        <div class="opciones" id="colores">
+          <button data-color="white" style="background:white; border:1px solid #ccc">Blanco</button>
+          <button data-color="sand" class="active" style="background:#f0dcc5; border:1px solid #ccc">Arena</button>
+          <button data-color="black" style="background:black; color:white">Negro</button>
+        </div>
+      </div>
+
+      <!-- Botones -->
+      <div class="botones">
+        <button class="boton-carrito" onclick="agregarAlCarrito()">Añadir al carrito</button>
+        <button class="boton-pagar" onclick="window.location.href='checkout.html'">Pagar ya</button>
+      </div>
+
+      <!-- WhatsApp -->
+      <a href="https://wa.me/573001234567" target="_blank" class="btn-whatsapp">💬 Consultar por WhatsApp</a>
+
+      <!-- Reseñas -->
+      <div class="resenas">
+        <h3>Lo que dicen nuestros clientes</h3>
+        <div class="resena">
+          <p>"Tela suave y diseño único. Llegó rápido y empacado con estilo."</p>
+          <span class="usuario">- Andrés M.</span>
+        </div>
+        <div class="resena">
+          <p>"La talla M quedó perfecta. La edición especial es increíble."</p>
+          <span class="usuario">- Valentina R.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Carrito lateral -->
+<div class="carrito" id="carrito">
+  <h2>Carrito</h2>
+  <ul id="lista-carrito"></ul>
+  <div class="carrito-total">
+    <span>Total:</span>
+    <span id="carrito-total">$0</span>
+  </div>
+  <button class="btn" id="vaciar-carrito">Vaciar carrito</button>
+</div>
+
+<!-- Notificación -->
+<div id="toast" class="toast">Producto añadido al carrito 🛍️</div>
+
+<footer class="footer-noxhood">
+  <div class="footer-contenido">
+    <img src="Imagenes/logo_oscuro.png" alt="Logo Noxhood" class="logo" id="logo-footer">
+  </div>
+  <div class="footer-info">
+    <p>© 2025 Noxhood. Todos los derechos reservados.</p>
+    <p>contacto@noxhood.com</p>
+  </div>
+  <div class="footer-redes">
+    <a href="https://instagram.com/noxhood">Instagram</a>
+    <a href="https://tiktok.com/@noxhood">TikTok</a>
+    <a href="https://wa.me/573001234567">WhatsApp</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // --- Variables del carrito ---
+  let carrito = [];
+  let total = 0;
+
+  // --- Renderizar carrito ---
+  function renderCarrito() {
+    const listaCarritoEl = document.getElementById("lista-carrito");
+    if (!listaCarritoEl) return;
+
+    listaCarritoEl.innerHTML = "";
+    carrito.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = `${item.nombre} - $${item.precio}`;
+      listaCarritoEl.appendChild(li);
+    });
+
+    const totalCarritoEl = document.getElementById("carrito-total");
+    if (totalCarritoEl) {
+      totalCarritoEl.textContent = `$${total}`;
+    }
+  }
+
+  // --- Añadir al carrito ---
+  function agregarAlCarrito() {
+    const talla = document.querySelector("#tallas .active").dataset.talla;
+    const color = document.querySelector("#colores .active").dataset.color;
+    const nombre = document.querySelector(".producto-info h2").textContent;
+    const precio = 89900;
+
+    carrito.push({ nombre, precio });
+    total += precio;
+    renderCarrito();
+    mostrarToast(`✅ ${nombre} (${talla}, ${color}) añadido al carrito`);
+  }
+
+  // --- Cambiar imagen ---
+  function cambiarImagen(img) {
+    document.getElementById("imagen-principal").src = img.src;
+    document.querySelectorAll(".miniaturas img").forEach(i => i.classList.remove("active"));
+    img.classList.add("active");
+  }
+
+  // --- Selector de talla ---
+  document.querySelectorAll("#tallas button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll("#tallas button").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+    });
+  });
+
+  // --- Selector de color ---
+  document.querySelectorAll("#colores button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll("#colores button").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+    });
+  });
+</script>
+</body>
+</html>

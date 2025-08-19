@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout - Noxhood</title>
+  <link rel="icon" href="Imagenes/Moon.png" />
+  <link rel="stylesheet" href="estilo_noxhood.css" />
+  <style>
+    /* Estilos específicos de checkout */
+    .checkout-container {
+      max-width: 900px;
+      margin: 80px auto;
+      padding: 30px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .checkout-form {
+      flex: 1;
+      min-width: 300px;
+      background: #f8f8f8;
+      border-radius: 15px;
+      padding: 30px;
+      border: 1px solid #e0e0e0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    body.modo-oscuro .checkout-form {
+      background: #1a1a1a;
+      border-color: #444;
+    }
+
+    .checkout-form h2 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 20px;
+      color: #000;
+    }
+
+    body.modo-oscuro .checkout-form h2 {
+      color: #fff;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #000;
+    }
+
+    body.modo-oscuro .form-group label {
+      color: #ccc;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      background: #fff;
+      color: #000;
+      font-size: 15px;
+    }
+
+    body.modo-oscuro .form-group input,
+    body.modo-oscuro .form-group select {
+      background: #111;
+      border-color: #555;
+      color: #fff;
+    }
+
+    .form-group input::placeholder {
+      color: #999;
+    }
+
+    .btn-checkout {
+      background: #6b6a6a;
+      color: white;
+      border: none;
+      padding: 14px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      width: 100%;
+    }
+
+    .btn-checkout:hover {
+      background: #444;
+      transform: scale(1.03);
+    }
+
+    .resumen-carrito {
+      flex: 1;
+      min-width: 300px;
+      background: #fff;
+      border-radius: 15px;
+      padding: 25px;
+      border: 1px solid #e0e0e0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    body.modo-oscuro .resumen-carrito {
+      background: #1a1a1a;
+      border-color: #444;
+    }
+
+    .resumen-carrito h2 {
+      font-family: 'Playfair Display', serif;
+      color: #000;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    body.modo-oscuro .resumen-carrito h2 {
+      color: #fff;
+    }
+
+    .item-carrito {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px dashed #eee;
+      color: #333;
+      font-size: 14px;
+    }
+
+    body.modo-oscuro .item-carrito {
+      color: #ccc;
+      border-bottom-color: #444;
+    }
+
+    .item-carrito .precio {
+      font-weight: bold;
+    }
+
+    .total-final {
+      font-size: 18px;
+      font-weight: bold;
+      color: #000;
+      margin-top: 20px;
+      text-align: right;
+    }
+
+    body.modo-oscuro .total-final {
+      color: #fff;
+    }
+
+    .acciones-checkout {
+      margin-top: 30px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      flex: 1;
+      transition: 0.3s;
+    }
+
+    .btn-whatsapp:hover {
+      background: #128C7E;
+      transform: scale(1.03);
+    }
+
+    .volver-tienda {
+      background: #444;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-align: center;
+      text-decoration: none;
+      flex: 1;
+    }
+
+    .volver-tienda:hover {
+      background: #222;
+    }
+  </style>
+</head>
+<body class="modo-oscuro">
+
+  <header>
+    <div class="logo-container">
+      <a href="index.html"><img src="Imagenes/logo_claro.png" alt="Logo Noxhood" class="logo" id="logo-header"></a>
+    </div>
+    <nav class="nav-buttons">
+      <button onclick="location.href='index.html'">Inicio</button>
+      <button onclick="location.href='pantalones.html'">Pantalones</button>
+      <button onclick="location.href='camisas.html'">Camisas</button>
+      <button onclick="location.href='redes.html'">Redes</button>
+    </nav>
+
+    <!-- Dropdown (⚙) -->
+    <div class="dropdown">
+      <button class="dropdown-toggle">⚙</button>
+      <div class="dropdown-menu">
+        <div class="font-size-controls">
+          <button id="increase-font">A+</button>
+          <button id="decrease-font">A-</button>
+        </div>
+        <button id="modo-btn">☀ Modo claro</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="checkout-container">
+    <section class="checkout-form">
+      <h2>Completa tu compra</h2>
+      <form id="form-checkout" novalidate>
+        <div class="form-group">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="tu@correo.com" required />
+        </div>
+        <div class="form-group">
+          <label for="telefono">Teléfono (WhatsApp)</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="+57 300 123 4567" required />
+        </div>
+        <div class="form-group">
+          <label for="direccion">Dirección</label>
+          <input type="text" id="direccion" name="direccion" placeholder="Calle 123 #45-67" required />
+        </div>
+        <div class="form-group">
+          <label for="metodo">Método de pago</label>
+          <select id="metodo" name="metodo" required>
+            <option value="">Selecciona</option>
+            <option value="efectivo">Efectivo (contra entrega)</option>
+            <option value="nequi">Nequi / Daviplata</option>
+            <option value="bancolombia">Transferencia Bancolombia</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-checkout">Confirmar compra</button>
+      </form>
+    </section>
+
+    <aside class="resumen-carrito">
+      <h2>Tu pedido</h2>
+      <ul id="lista-checkout"></ul>
+      <div class="total-final">Total: <span id="total-checkout">$0</span></div>
+      <div class="acciones-checkout">
+        <a href="https://wa.me/573001234567" target="_blank" class="btn-whatsapp">Contactar por WhatsApp</a>
+        <a href="index.html" class="volver-tienda">Volver</a>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer-noxhood">
+    <div class="footer-contenido">
+      <img src="Imagenes/logo_claro.png" alt="Logo Noxhood" class="logo" id="logo-footer">
+    </div>
+    <div class="footer-info">
+      <p>© 2025 Noxhood. Todos los derechos reservados.</p>
+      <p>contacto@noxhood.com</p>
+    </div>
+    <div class="footer-redes">
+      <a href="https://instagram.com/noxhood">Instagram</a>
+      <a href="https://tiktok.com/@noxhood">TikTok</a>
+      <a href="https://wa.me/573001234567">WhatsApp</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    let carrito = [];
+    // --- Menú desplegable (⚙) ---
+    document.querySelector('.dropdown-toggle').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector('.dropdown').classList.toggle('open');
+    });
+
+    // Cerrar menú al hacer clic fuera
+    document.addEventListener('click', (e) => {
+      const dropdown = document.querySelector('.dropdown');
+      if (!e.target.closest('.dropdown') && dropdown.classList.contains('open')) {
+        dropdown.classList.remove('open');
+      }
+    });
+
+    // --- Cargar carrito en checkout ---
+    document.addEventListener("DOMContentLoaded", () => {
+      cargarCarrito();
+      renderCheckout();
+
+      // Inicializar modo oscuro/claro si no está hecho
+      const modoBtn = document.getElementById("modo-btn");
+      if (modoBtn && !modoBtn.hasAttribute('data-inicializado')) {
+        modoBtn.setAttribute('data-inicializado', 'true');
+        modoBtn.addEventListener("click", () => {
+          document.body.classList.toggle("modo-oscuro");
+          const esModoOscuro = document.body.classList.contains("modo-oscuro");
+          modoBtn.textContent = esModoOscuro ? "☀ Modo claro" : "🌙 Modo oscuro";
+          localStorage.setItem("modoOscuro", esModoOscuro);
+        });
+      }
+    });
+
+    function renderCheckout() {
+      const lista = document.getElementById("lista-checkout");
+      const total = document.getElementById("total-checkout");
+      lista.innerHTML = "";
+
+      carrito.forEach(item => {
+        const li = document.createElement("li");
+        li.classList.add("item-carrito");
+        li.innerHTML = `<span class="nombre">${item.nombre}</span> <span class="precio">$${formatearPrecio(item.precio)}</span>`;
+        lista.appendChild(li);
+      });
+
+      total.textContent = `$${formatearPrecio(totalCarritoValue())}`;
+    }
+
+    function totalCarritoValue() {
+      return carrito.reduce((sum, item) => sum + item.precio, 0);
+    }
+
+    // Formatear precio con puntos (ej: 89.900)
+    function formatearPrecio(precio) {
+      return precio.toLocaleString('es-CO', {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+      });
+    }
+
+    // Validación del formulario
+    document.getElementById("form-checkout").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData);
+
+      const mensaje = `*Pedido Noxhood*\nNombre: ${data.nombre}\nEmail: ${data.email}\nTeléfono: ${data.telefono}\nDirección: ${data.direccion}\nMétodo: ${data.metodo}\nTotal: $${formatearPrecio(totalCarritoValue())}`;
+      
+      const url = `https://wa.me/573001234567?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, '_blank');
+
+      alert("¡Gracias por tu compra! Serás redirigido a WhatsApp.");
+    });
+    // Cargar carrito desde localStorage
+document.addEventListener("DOMContentLoaded", () => {
+  const carritoGuardado = localStorage.getItem("carrito");
+  if (carritoGuardado) {
+    carrito = JSON.parse(carritoGuardado);
+    renderCheckout();
+  } else {
+    document.getElementById("lista-checkout").innerHTML = "<li>No hay productos en el carrito.</li>";
+    document.getElementById("total-checkout").textContent = "$0";
+  }
+});
+
+// Renderizar carrito en checkout
+function renderCheckout() {
+  const lista = document.getElementById("lista-checkout");
+  const total = document.getElementById("total-checkout");
+  lista.innerHTML = "";
+
+  carrito.forEach(item => {
+    const li = document.createElement("li");
+    li.classList.add("item-carrito");
+    li.innerHTML = `
+      <span class="nombre">${item.nombre}</span> 
+      <span class="precio">$${formatearPrecio(item.precio)}</span>
+    `;
+    lista.appendChild(li);
+  });
+
+  total.textContent = `$${formatearPrecio(totalCarritoValue())}`;
+}
+
+function totalCarritoValue() {
+  return carrito.reduce((sum, item) => sum + item.precio, 0);
+}
+
+// Formatear precio con puntos (ej: 89.900)
+function formatearPrecio(precio) {
+  return precio.toLocaleString('es-CO', {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0
+  });
+}
+  </script>
+</body>
+</html>
