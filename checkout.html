@@ -193,29 +193,31 @@
 </head>
 <body class="modo-oscuro">
 
-  <header>
-    <div class="logo-container">
-      <a href="index.html"><img src="Imagenes/logo_claro.png" alt="Logo Noxhood" class="logo" id="logo-header"></a>
-    </div>
-    <nav class="nav-buttons">
-      <button onclick="location.href='index.html'">Inicio</button>
-      <button onclick="location.href='pantalones.html'">Pantalones</button>
-      <button onclick="location.href='camisas.html'">Camisas</button>
-      <button onclick="location.href='redes.html'">Redes</button>
-    </nav>
-
-    <!-- Dropdown (⚙) -->
-    <div class="dropdown">
-      <button class="dropdown-toggle">⚙</button>
-      <div class="dropdown-menu">
-        <div class="font-size-controls">
-          <button id="increase-font">A+</button>
-          <button id="decrease-font">A-</button>
-        </div>
-        <button id="modo-btn">☀ Modo claro</button>
+    <header>
+      <div class="logo-container">
+        <a href="index.html"><img src="Imagenes/logo_oscuro.png" alt="Logo Noxhood" class="logo" id="logo-header"></a>
       </div>
-    </div>
-  </header>
+
+      <nav class="nav-buttons">
+        <button onclick="location.href='index.html'">Inicio</button>
+        <button onclick="location.href='pantalones.html'">Pantalones</button>
+        <button onclick="location.href='camisas.html'">Camisas</button>
+        <button onclick="location.href='redes.html'">Redes</button>
+      </nav>
+
+      <div class="header-right">
+        <div class="search-box">
+          <button class="search-toggle" aria-label="Buscar">🔍</button>
+          <input type="text" id="Buscar" placeholder="Search">
+        </div>
+      </div>
+
+      <!-- Controles flotantes -->
+      <button id="modo-btn">🌙 Modo oscuro</button>
+
+      <!-- Botón del carrito -->
+      <button class="btn-carrito" style="top: 140px;" onclick="toggleCarrito()">🛒</button>
+    </header>
 
   <main class="checkout-container">
     <section class="checkout-form">
