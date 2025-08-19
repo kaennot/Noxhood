@@ -98,11 +98,11 @@
   <!-- Sección: Pantalones -->
   <section class="productos">
     <!-- Producto 1 -->
-    <div class="producto fade-in" data-precio="100000">
+    <div class="producto fade-in" data-precio="109000">
       <img src="Imagenes/cargo1.jpg" alt="Jean clásico azul">
       <div class="overlay">
         <h3>Jean clásico azul</h3>
-        <p>$100.000</p>
+        <p>$109.000</p>
         <div class="botones">
           <a href="javascript:void(0)" class="btn">Añadir al carrito</a>
           <a href="javascript:void(0)" class="btn">Pagar ya</a>
@@ -111,11 +111,11 @@
     </div>
 
     <!-- Producto 2 -->
-    <div class="producto fade-in" data-precio="100000">
+    <div class="producto fade-in" data-precio="114900">
       <img src="Imagenes/cargo2.jpg" alt="Jean baggy gris vintage">
       <div class="overlay">
         <h3>Jean baggy gris vintage</h3>
-        <p>$100.000</p>
+        <p>$114.900</p>
         <div class="botones">
           <a href="javascript:void(0)" class="btn">Añadir al carrito</a>
           <a href="javascript:void(0)" class="btn">Pagar ya</a>
@@ -124,11 +124,11 @@
     </div>
 
     <!-- Producto 3 -->
-    <div class="producto fade-in" data-precio="100000">
+    <div class="producto fade-in" data-precio="99000">
       <img src="Imagenes/cargo3.jpg" alt="Jean estilo baggy">
       <div class="overlay">
         <h3>Jean estilo baggy</h3>
-        <p>$100.000</p>
+        <p>$99.000</p>
         <div class="botones">
           <a href="javascript:void(0)" class="btn">Añadir al carrito</a>
           <a href="javascript:void(0)" class="btn">Pagar ya</a>
@@ -181,6 +181,24 @@
     </div>
   </section>
 
+  <!-- Botón flotante para abrir el chatbot -->
+<button id="open-chatbot" class="open-chatbot-btn">💬</button>
+
+<!-- Chatbot flotante -->
+<div class="chatbot-container">
+  <div class="chatbot-header">
+    <span>🤖 Asistente Noxhood</span>
+    <button id="minimize-chatbot">−</button>
+  </div>
+  <div class="chatbot-messages" id="chatbot-messages">
+    <div class="message bot">¡Hola! 👋 Soy el asistente de Noxhood. ¿En qué puedo ayudarte?</div>
+  </div>
+  <div class="chatbot-input">
+    <input type="text" id="chatbot-input" placeholder="Escribe tu mensaje...">
+    <button id="send-chatbot">➤</button>
+  </div>
+</div>
+
   <!-- Footer -->
   <footer class="footer-noxhood">
     <div class="footer-contenido">
@@ -213,7 +231,6 @@
       <a href="checkout.html" class="btn-pagar-carrito">Pagar</a>
     </div>
   </div>
-
   <script src="script.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
